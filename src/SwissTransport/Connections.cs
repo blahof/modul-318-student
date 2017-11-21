@@ -19,6 +19,11 @@ namespace SwissTransport
 
         [JsonProperty("duration")]
         public string Duration { get; set; }
+
+        public override string ToString()
+        {
+            return From.ToString();
+        }
     }
 
     public class ConnectionPoint
@@ -39,5 +44,10 @@ namespace SwissTransport
         public string Platform { get; set; }
 
         public string RealtimeAvailability { get; set; }
+
+        public override string ToString()
+        {
+            return "Arrival: " + Arrival +", Departure: " + Departure + ", Station" +  Station.ToString();
+        }
     }
 }
